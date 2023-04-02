@@ -1,0 +1,101 @@
+Se requiere una aplicación web que resuelva el siguiente caso de negocio:
+
+Una agencia de automóviles capta clientes, recopila sus datos y posteriormente da seguimiento a través de llamadas telefónicas. La aplicación debe permitir la captura de los datos de los Prospectos: Nombre, Apellidos, Domicilio, Ciudad, Estado, Email, Teléfono. Una vez dado de alta el prospecto, debe relacionarse con el o los tipos de automóvil por el cual está preguntando. Debe existir un CRUD de los tipos de automóviles. Debe existir una pantalla de seguimiento de la solicitud de información realizada, esta debe tener status de Abierta o Cerrada; mientras esté abierta puede agregar nuevos comentarios pero una vez cerrada debe quedar como solo lectura.
+
+La aplicación debe estar desarrollada usando Vue.JS 3.X. Debe usar una API Restful con Jakarta 9.1 (Glassfish) y Jersey. Debe almacenar los datos en una base de datos MySQL 8.0, usando al menos 3 procedimientos almacenados, 1 función, 2 triggers y 1 vista. Se debe usar JPA para el mapeo de las entidades dentro de la aplicación. Se debe crear un repositorio GIT para llevar el control de versiones del código.
+
+
+Tecnologías
+	Frontend
+-	VueJS 3.x
+
+Backend
+-	Java (JPA y Hibernate)
+-	Glassfish / JBoss
+-	Jersey
+-	Mysql 8.0 (1 función, 2 triggers, 1 vista)
+
+
+1- Planteamiento de la solución
+-------------------------------
+  BACKEND
+    1- Entidades
+      1+ prospect. Prospectos(C=Crea, R=Lista, U=Solo el estado, D=Borra)
+        name,
+        firstname,
+        lastname,
+        address,
+        city,
+        state,
+        email,
+        phone,
+        comments,
+        active
+
+        active = true ? Se pueden agregar comentarios : Solo lectura
+
+      2+ cartype.	Tipos de automoviles (CRUD)
+        id
+        key
+        description
+        active
+
+        Data
+        ----
+          1- SUV
+          2- Hatchback
+          3- Crossover
+          4- Convertible
+          5- Sedan
+          6- Sports Car
+          7- Coupe
+          8- Minivan
+          9- Station Wagon
+          10- Pickup's
+    2- RECURSOS DE BD
+      PROCEDURES(3)
+      -------------
+      1+ Borrar registro de tabla cartype
+      2+ Borrar registro de tabla prospect
+      3+ Obtener todos los registros de Prospect
+
+      FUNCTION (1)
+      ------------
+      1+ Contar clientes registrados (nuevo endpoint)
+
+      TRIGGERS (1)
+      ------------
+      1+ Actualización de estado a true cuando el estado sea false al INSERT en table Car Type
+      2+ Actualización de estado a true cuando el estado sea false al UPDATE en table Car Type
+
+      VIEWS(1)
+      --------
+      1+ Lista de prospectos atendidos / con seguimiento
+
+
+
+
+  FRONTEND
+
+
+
+
+
+2- Diagrama entidad relación
+----------------------------
+  + 3 procedimientos almacenados
+  + 1 función
+  + 2 triggers
+  + 1 vista
+
+3- Test's
+---------
+  + Servicios
+  + Repositorios
+
+4- Documento con alcance de los entregables
+
+5- Video mostrando funcionalidad
+
+6- Desplegar en la nube
+
