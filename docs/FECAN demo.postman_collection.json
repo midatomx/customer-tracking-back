@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "b09a3a07-8364-4d3d-833b-33b341d9feb0",
+		"name": "FECAN demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8557003"
+	},
+	"item": [
+		{
+			"name": "Car Type",
+			"item": [
+				{
+					"name": "Get All Cartype",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cartype",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartype"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Car Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cartype/7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartype",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New CarType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"HBK\",\n    \"name\": \"Hatchback\",\n    \"active\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartype/new",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartype",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update CarType",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 7,\n    \"code\": \"SUB\",\n    \"name\": \"Sports Utility Vehicle.\",\n    \"active\": false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cartype/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartype",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Car Type",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cartype/8",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartype",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Car Type Procedure",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/cartype/11/procedure",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cartype",
+								"11",
+								"procedure"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prospect",
+			"item": [
+				{
+					"name": "Get All Prospect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/prospect",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"prospect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Prospect Procedure",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/prospect/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"prospect",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Prospect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/prospect/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"prospect",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/prospect/count",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"prospect",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Prospect",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cartype\": {\n        \"id\": 11\n    },\n    \"name\": \"Eerick\",\n    \"firstname\": \"García\",\n    \"lastname\": \"Martínez\",\n    \"address\": \"Dirección\",\n    \"state\": \"Estado\",\n    \"city\": \"Ciudad\",\n    \"email\": \"erick@gmail.com\",\n    \"phone\": \"5530555471\",\n    \"comments\": \"Estos con mis comentarios\",\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/prospect/new",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"prospect",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Prospect",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 12,\n    \"cartype\": {\n        \"id\": 7\n    },\n    \"name\": \"Erick Tonatiuh\",\n    \"firstname\": \"García\",\n    \"lastname\": \"Martínez\",\n    \"address\": \"Dirección\",\n    \"state\": \"Estado\",\n    \"city\": \"Ciudad\",\n    \"email\": \"erick@gmail.com\",\n    \"phone\": \"5530555471\",\n    \"comments\": \"Estos con mis comentarios\",\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/prospect/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"prospect",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Prospect",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/prospect/12",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"prospect",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Prospect Procedure",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/prospect/3/procedure",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"prospect",
+								"3",
+								"procedure"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
